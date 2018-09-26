@@ -1,0 +1,1 @@
+调用webuploader，放public 目录下即可，public下需创建一个Uploads文件夹
