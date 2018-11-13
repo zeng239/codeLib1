@@ -1,0 +1,12 @@
+生成带背景图的二维码
+
+phpqrcode 类放入 extend目录下
+
+index.php入口文件中需要定义：
+
+
+//根url方便回调地址等
+define('APP_ROOT_URL', 'http://demo.me/PayWithTP5/');
+
+//exted
+define('EXTEND_PATH', __DIR__.'/extend/');
