@@ -1,0 +1,17 @@
+1.使用secret_key_tools_RSA_win 秘钥生成工具生成商户公钥，私钥，注意非java要选择PKCS1
+
+2.填写公钥至https://openhome.alipay.com/platform/keyManage.htm
+
+3.将官方demo下载至extend,在index.php入口文件中定义
+
+//exted
+define('EXTEND_PATH', __DIR__.'/extend/');
+//支付宝移动端支付扩展目录
+define('ALIPAY_WAP_DEMO_PATH', EXTEND_PATH.'alipay.trade.wap.pay-PHP-UTF-8/');
+//支付宝PC端支付扩展目录
+define('ALIPAY_PAGE_DEMO_PATH', EXTEND_PATH.'alipay.trade.page.pay-PHP-UTF-8/');
+
+4.修改扩展中的config.php配置
+注意：填写的是支付宝公钥 和商户私钥   不要填写刚才生成的商户公钥
+
+5.修改回调地址，编写跳转，回调相关功能
