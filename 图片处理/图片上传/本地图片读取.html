@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>模拟图片上传demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="">
+<img id="img1" src="" alt="" width="200" height="200">
+<input type="file" id="image"><br>
+<button type="button" onclick="test()">模拟上传</button>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+function test(){
+    var reader = new FileReader();
+    var AllowImgFileSize = 2100000; //上传图片最大值(单位字节)（ 2 M = 2097152 B ）超过2M上传失败
+    var file = $("#image")[0].files[0];
+    var imgUrlBase64;
+    if (file) {
+        reader.readAsDataURL(file); //将文件以Data URL形式读入
+
+        reader.onload = function (e) {
+            //var ImgFileSize = reader.result.substring(reader.result.indexOf(",") + 1).length;//截取base64码部分（可选可不选，需要与后台沟通）
+            if (AllowImgFileSize != 0 && AllowImgFileSize < reader.result.length) {
+                alert( '上传失败，请上传不大于2M的图片！');
+                return;
+            }else{
+                //执行上传操作
+                $("#img1").attr("src",reader.result);
+                console.log(reader.result);
+            }
+        }
+    }
+}
+</script>
+
+</body>
+</html>
