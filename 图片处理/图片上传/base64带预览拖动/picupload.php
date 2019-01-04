@@ -2,8 +2,10 @@
 header('Access-Control-Allow-Origin:*');
 header("Content-type: application/json; charset=utf-8");
 if(isset($_POST['images'])){
+	$allowType = ['jpg','png','gif'];
 	$paths = [];
     foreach($_POST['images'] as $image){
+		if(!in_array(strtolower($image['type']), $allowType)) continue;//过滤文件类型后缀
         $base_img = $image['file'];
         if (strstr($base_img, ",")){    //判断是否有逗号 如果有就截取后半部分
             $tempimg = explode(',', $base_img);
