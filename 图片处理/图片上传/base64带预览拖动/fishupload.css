@@ -1,0 +1,37 @@
+.inputfile {
+    position:absolute; clip:rect(0 0 0 0);
+}
+.preview_box{
+    width:100%;
+    display:inline-block;
+}
+
+
+.preview_box .imgbox{
+    width:100px;
+    height:120px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 1px #CCCCCC solid;
+    position: relative;
+}
+.preview_box img{
+    width:100%;
+    height: auto;
+    max-height:100px;
+}
+
+
+.del_img{
+    display: block;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    background: #d43f3a;
+    color: #ffffff;
+    position:absolute;
+    bottom: 0;
+    text-align: center;
+}
